@@ -9,7 +9,7 @@ bot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapte
 
 trainer = ChatterBotCorpusTrainer(bot)
 trainer.train(
-    "/Users/sammi/Videos/Auxi/custom/custom.yml"
+    "/Users/Sam/Desktop/Auxi/custom/custom.yml"
 )
 
 
