@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/static/Trans.png"
+    />
+    <title>AuxiBot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+@font-face {font-family: "Amazon Ember"; src: url("//db.onlinewebfonts.com/t/157c6cc36dd65b1b2adc9e7f3329c761.eot"); src: url("//db.onlinewebfonts.com/t/157c6cc36dd65b1b2adc9e7f3329c761.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/157c6cc36dd65b1b2adc9e7f3329c761.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/157c6cc36dd65b1b2adc9e7f3329c761.woff") format("woff"), url("//db.onlinewebfonts.com/t/157c6cc36dd65b1b2adc9e7f3329c761.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/157c6cc36dd65b1b2adc9e7f3329c761.svg#Amazon Ember") format("svg"); }
+    body {
+
+    font-family: Amazon Ember, sans-serif;
+    background-image: linear-gradient(to right, #da2d67, #ffcd00);
+    min-height: 120vh;
+    display: flex;
+    flex-direction: column;
+      }
+    center {
+      background-color: white;
+    border-radius: 20px;
+    }
+      h1 {
+    display: inline-block;
+    font-size: 3em;
+    margin: 0;
+    padding: 14px;
+      }
+      h3 {
+    color: black;
+    font-size: 20px;
+    margin-top: 3px;
+    text-align: center;
+    font-family: sans-serif;
+      }
+      #chatbox {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    height:300px;
+    overflow:auto;
+
+      }
+      #userInput {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+      }
+      #textInput {
+    width: 40%;
+    border: none;
+    font-family: Amazon Ember, sans-serif;
+    font-size: 20px;
+    border-radius: 20px;
+    line-height: 20px;
+    padding: 1em;
+    outline: none;
+    margin-left: 30%;
+      }
+      .userText {
+    color: #404040;
+   font-family: Amazon Ember, sans-serif;
+    font-size: 20px;
+    text-align: right;
+    line-height: 30px;
+    align-items: center;
+    margin-left: 10px;
+    padding: 5px;
+    align-content: right;
+      }
+      .userText span {
+    max-width: 75%;
+    margin-bottom: 0.1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+    border: 0px;
+    background: white;
+    border-radius: 20px;
+    padding: 1em;
+    align-self: center;
+    margin:5px;
+    }
+      .userText img {
+            width: 47px;
+
+    height: 47px;
+    border-radius: 50px;
+    border: 0px;
+    display: inline-block;
+    margin:5px
+    background-color: black;
+    align-self: center;
+    vertical-align: middle;
+      }
+
+      .botText {
+    color: #404040;
+    font-family: Amazon Ember, sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    padding: 5px;
+      }
+      .botText span {
+    max-width: 75%;
+    margin-bottom: 0.1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px;
+    border: 0px;
+    background: white;
+    border-radius: 20px;
+    padding: 1em;
+    margin:5px;
+    align-self: center;
+      }
+      .botText img {
+    width: 47px;
+    height: 47px;
+    border-radius: 50px;
+    border: 0px;
+    display: inline-block;
+    margin:5px
+    background-color: black;
+    align-self: center;
+      }
+      #tidbit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+      }
+      .boxed {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-top: 60px;
+      }
+      .box {
+      }
+        .send {
+        text-align: center;
+        width: 100px;
+        font-family: Amazon Ember, sans-serif;
+        font-size: 17px;
+        border-radius: 5px;
+        outline: none;
+        height: 75px;
+        width: auto;
+      }
+footer {
+  height: 200px;
+  width: 100%;
+  background-color: #00a096;
+  bottom: 10;
+  float: bottom;
+  margin-top: 30%;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+ }
+.info {
+font-family: Amazon Ember, sans-serif;
+  font-size: 20px;
+  text-align: left;
+  width: 55%;
+  margin-left: 10px;
+  margin-top: 25px;
+  margin: auto;
+}
+
+footer img {
+  width: 7%;
+  margin-top: 30px;
+  border-radius: 30px;
+  margin: auto;
+}
+ul:before {
+  content: attr(aria-label);
+  font-size: 24px;
+  list-style-type: none;
+  margin-bottom: 40px;
+  margin-top: 1px;
+
+}
+
+ul {
+  padding: 35px;
+  margin-right: 20px;
+  font-size: 18px;
+  list-style-type: none;
+    margin-top: 1px;
+}
+li:first-of-type{
+  margin-top: 10px;
+}
+li {
+  list-style-type: none
+  font-size: 25px;
+  margin: 0 0 5px 0;
+}
+}
+    }
+    </style>
+  </head>
+<body>
+    <center>
+      <h1>
+       Auxi
+      </h1>
+    </center>
+<div class="box"></div>
+    <div class="boxed">
+      <div>
+        <div id="chatbox">
+          <p class="botText">
+            <img src="/static/Bots.jpg">
+            <span>Hallo, ik ben Auxi! Waar kan ik je mee helpen?</span>
+          </p>
+        </div>
+        <div id="userInput">
+          <input id="textInput" type="text" name="msg" placeholder="Vraag me iets!" />
+          <input class= "send" type="image" src="/static/pijl.png" name="stuurbutton" onclick="getBotResponse()">
+        </div>
+      </div>
+    </div>
+  </body>
+<script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + "</span><img src='/static/user.jpg'></p>";
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document
+            .getElementById("userInput")
+          var container = $('#chatbox')[0];
+          var containerHeight = container.clientHeight;
+          var contentHeight = container.scrollHeight;
+
+container.scrollTop = contentHeight - containerHeight;
+
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"><img src="/static/Bots.jpg"><span>' + data + "</span></p>";
+            $("#chatbox").append(botHtml);
+            document
+              .getElementById("userInput")
+              var container = $('#chatbox')[0];
+              var containerHeight = container.clientHeight;
+              var contentHeight = container.scrollHeight;
+
+              container.scrollTop = contentHeight - containerHeight;
+
+          });
+
+        }
+        $("#textInput").keypress(function(e) {
+          if (e.which == 13) {
+            getBotResponse();
+          }
+        });
+</script>
+<footer>
+<p class ="info">Auxi is een slimme robot die jou helpt met het vinden van belangrijke en relevante informatie. Auxi maakt gebruik van kunstmatige intelligentie en is getraind op een manier die het beantwoorden van vragen over het Gymnasium mogelijk maakt. Dus ben je op zoek naar een toetsrooster of de schoolreglementen dan kan Auxi je helpen!</p>
+<img src="/static/Bots.jpg">
+<ul aria-label="Contact:">
+  <li>Auxibot</li>
+  <li>auxibotinfo@gmail.com</li>
+</ul>
+</footer>
+</html>
